@@ -147,3 +147,27 @@ if (
 
     renderTodos();
 }
+
+function saveTodos() {
+
+    localStorage.setItem(
+        "todos",
+        JSON.stringify(todos)
+    );
+}
+
+function loadTodos() {
+
+    const data =
+        localStorage.getItem(
+            "todos"
+        );
+
+    if (data) {
+
+        todos =
+            JSON.parse(data);
+
+        renderTodos();
+    }
+}
