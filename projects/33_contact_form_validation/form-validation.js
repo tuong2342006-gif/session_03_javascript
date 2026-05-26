@@ -18,3 +18,18 @@ const emailError =
 
 const messageError =
     document.getElementById("messageError");
+
+function validateEmail(email) {
+
+    const regex =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    return regex.test(email);
+}
+console.log(
+    validateEmail("abc@gmail.com")
+);
+
+console.log(
+    validateEmail("abcgmail.com")
+);
