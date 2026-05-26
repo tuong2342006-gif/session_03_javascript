@@ -171,3 +171,42 @@ function loadTodos() {
         renderTodos();
     }
 }
+const remainingCount =
+    document.getElementById(
+        "remainingCount"
+    );
+
+function updateCount() {
+
+    const activeTodos =
+        todos.filter(
+            todo =>
+                !todo.completed
+        );
+
+    remainingCount.textContent =
+        `${activeTodos.length}
+         tasks remaining`;
+}
+
+let currentFilter = "all";
+let filteredTodos = todos;
+if (
+    currentFilter === "active"
+) {
+
+    filteredTodos =
+        todos.filter(
+            todo => !todo.completed
+        );
+}
+if (
+    currentFilter ===
+    "completed"
+) {
+
+    filteredTodos =
+        todos.filter(
+            todo => todo.completed
+        );
+}
