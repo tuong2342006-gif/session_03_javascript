@@ -26,3 +26,13 @@ searchInput.addEventListener("input", () => {
         searchInput.value;
 
 });
+
+const keyDisplay =
+    document.getElementById("keyDisplay");
+
+document.addEventListener("keydown", (e) => {
+
+    keyDisplay.textContent =
+        `You pressed: ${e.key}`;
+
+});
