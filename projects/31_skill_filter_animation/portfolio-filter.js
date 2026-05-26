@@ -13,3 +13,35 @@ const portfolioItems =
     });
 
 });
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const filter =
+            button.dataset.filter;
+
+        portfolioItems.forEach(item => {
+
+            const category =
+                item.dataset.category;
+
+            if (
+                filter === "all" ||
+                category === filter
+            ) {
+
+                item.style.display =
+                    "block";
+
+            } else {
+
+                item.style.display =
+                    "none";
+            }
+
+        });
+
+    });
+
+});
