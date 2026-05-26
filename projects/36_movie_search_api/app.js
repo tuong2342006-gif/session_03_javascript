@@ -77,3 +77,13 @@ function renderMovies(movies) {
         `;
     });
 }
+
+if (
+    data.Response === "False"
+) {
+
+    movieContainer.innerHTML =
+        "<h2>No movies found</h2>";
+
+    return;
+}
