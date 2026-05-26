@@ -47,3 +47,11 @@ form.addEventListener("submit", (e) => {
     console.log("Submitted");
 
 });
+const studentList =
+    document.getElementById("studentList");
+
+studentList.addEventListener("click", (e) => {
+
+    console.log(e.target.textContent);
+
+});
