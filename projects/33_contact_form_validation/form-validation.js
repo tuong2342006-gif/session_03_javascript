@@ -89,3 +89,40 @@ messageInput.addEventListener(
         }
     }
 );
+
+form.addEventListener(
+    "submit",
+    (e) => {
+
+        e.preventDefault();
+
+        const isNameValid =
+            nameInput.value.trim() !== "";
+
+        const isEmailValid =
+            validateEmail(
+                emailInput.value
+            );
+
+        const isMessageValid =
+            messageInput.value.length >= 10;
+
+        if (
+            isNameValid &&
+            isEmailValid &&
+            isMessageValid
+        ) {
+
+            alert("Form submitted!");
+
+            form.reset();
+
+        } else {
+
+            alert(
+                "Please fix validation errors."
+            );
+        }
+
+    }
+);
