@@ -93,3 +93,19 @@ searchInput.addEventListener(
         renderStudents(filteredStudents);
     }
 );
+
+const sortBtn =
+    document.getElementById("sortBtn");
+
+sortBtn.addEventListener(
+    "click",
+    () => {
+
+        const sortedStudents =
+            [...students].sort(
+                (a, b) => b.score - a.score
+            );
+
+        renderStudents(sortedStudents);
+    }
+);
