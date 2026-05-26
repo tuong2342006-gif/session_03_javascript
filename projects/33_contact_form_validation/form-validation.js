@@ -33,3 +33,59 @@ console.log(
 console.log(
     validateEmail("abcgmail.com")
 );
+
+nameInput.addEventListener(
+    "input",
+    () => {
+
+        if (
+            nameInput.value.trim() === ""
+        ) {
+
+            nameError.textContent =
+                "Name is required";
+
+        } else {
+
+            nameError.textContent = "";
+        }
+    }
+);
+
+emailInput.addEventListener(
+    "input",
+    () => {
+
+        if (
+            !validateEmail(
+                emailInput.value
+            )
+        ) {
+
+            emailError.textContent =
+                "Invalid email format";
+
+        } else {
+
+            emailError.textContent = "";
+        }
+    }
+);
+
+messageInput.addEventListener(
+    "input",
+    () => {
+
+        if (
+            messageInput.value.length < 10
+        ) {
+
+            messageError.textContent =
+                "Minimum 10 characters";
+
+        } else {
+
+            messageError.textContent = "";
+        }
+    }
+);
