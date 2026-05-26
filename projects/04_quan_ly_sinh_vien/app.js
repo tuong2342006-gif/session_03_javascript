@@ -52,3 +52,24 @@ const students = [
 ];
 
 console.log(students);
+
+const tableBody =
+    document.getElementById("studentTableBody");
+
+function renderStudents(data) {
+
+    tableBody.innerHTML = "";
+
+    data.forEach(student => {
+
+        tableBody.innerHTML += `
+            <tr>
+                <td>${student.id}</td>
+                <td>${student.name}</td>
+                <td>${student.score}</td>
+            </tr>
+        `;
+    });
+}
+
+renderStudents(students);
