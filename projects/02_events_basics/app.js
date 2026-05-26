@@ -13,3 +13,16 @@ increaseBtn.addEventListener("click", () => {
     counter.textContent = count;
 
 });
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const result =
+    document.getElementById("result");
+
+searchInput.addEventListener("input", () => {
+
+    result.textContent =
+        searchInput.value;
+
+});
