@@ -43,9 +43,9 @@ desc.innerHTML =
 
 //classList
 //HTML
-<h1 id="title">
+{/* <h1 id="title">
     Hello DOM
-</h1>
+</h1> */}
 //CSS
 // .active{
 //     color:red;
@@ -63,3 +63,39 @@ console.log(
 title.classList.toggle("active");
 
 
+//Style trực tiếp
+//HTML
+{/* <h1 id="title">
+    Hello DOM
+</h1> */}
+//JS
+title.style.color = "red";
+title.style.backgroundColor = "yellow";
+title.style.fontSize = "40px";
+
+//Tạo phần tử mới
+const li =
+    document.createElement("li");
+//nội dung
+li.textContent =
+    "Nguyen Van A";
+
+// gắn vào DOM
+const list =
+    document.getElementById("studentList");
+list.appendChild(li);
+
+//tạo nhiều phần tử
+const students =
+[
+    "An",
+    "Binh",
+    "Cuong"
+];
+students.forEach(student => {
+    const li =
+        document.createElement("li");
+    li.textContent = student;
+    list.appendChild(li);
+
+});
