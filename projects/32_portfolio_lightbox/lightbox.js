@@ -67,3 +67,29 @@ prevBtn.addEventListener("click", () => {
 
 });
 
+document.addEventListener(
+    "keydown",
+    (e) => {
+
+        if (e.key === "Escape") {
+
+            lightbox.style.display =
+                "none";
+        }
+
+    }
+);
+
+lightbox.addEventListener(
+    "click",
+    (e) => {
+
+        if (e.target === lightbox) {
+
+            lightbox.style.display =
+                "none";
+        }
+
+    }
+);
+
