@@ -85,3 +85,65 @@ todoList.addEventListener("click", (e) => {
         renderTodos();
     }
 });
+
+function renderTodos() {
+
+    todoList.innerHTML = "";
+
+    todos.forEach(todo => {
+
+        todoList.innerHTML += `
+            <li>
+
+                <input
+                    type="checkbox"
+                    class="toggle-btn"
+                    data-id="${todo.id}"
+                    ${todo.completed ? "checked" : ""}
+                >
+
+                <span
+                    style="
+                    text-decoration:
+                    ${
+                        todo.completed
+                        ? "line-through"
+                        : "none"
+                    };
+                    "
+                >
+                    ${todo.text}
+                </span>
+
+                <button
+                    class="delete-btn"
+                    data-id="${todo.id}"
+                >
+                    Delete
+                </button>
+
+            </li>
+        `;
+    });
+}
+if (
+    e.target.classList.contains(
+        "toggle-btn"
+    )
+) {
+
+    const id =
+        Number(
+            e.target.dataset.id
+        );
+
+    const todo =
+        todos.find(
+            todo => todo.id === id
+        );
+
+    todo.completed =
+        !todo.completed;
+
+    renderTodos();
+}
