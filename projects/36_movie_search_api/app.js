@@ -49,3 +49,31 @@ searchBtn.addEventListener(
     "click",
     searchMovies
 );
+
+function renderMovies(movies) {
+
+    movieContainer.innerHTML = "";
+
+    movies.forEach(movie => {
+
+        movieContainer.innerHTML += `
+            <div class="movie-card">
+
+                <img
+                    src="${movie.Poster}"
+                    alt="${movie.Title}"
+                    width="150"
+                >
+
+                <h3>
+                    ${movie.Title}
+                </h3>
+
+                <p>
+                    ${movie.Year}
+                </p>
+
+            </div>
+        `;
+    });
+}
