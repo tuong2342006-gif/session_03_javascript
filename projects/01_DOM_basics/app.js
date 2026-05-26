@@ -99,3 +99,14 @@ students.forEach(student => {
     list.appendChild(li);
 
 });
+
+//Xóa phần tử
+//HTML
+//<li id="student1">
+   // An
+//</li>
+//JS
+const item =
+    document.getElementById("student1");
+
+item.remove();
