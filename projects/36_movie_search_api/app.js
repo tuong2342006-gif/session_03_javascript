@@ -87,3 +87,44 @@ if (
 
     return;
 }
+
+let favorites =
+    JSON.parse(
+        localStorage.getItem(
+            "favorites"
+        )
+    ) || [];
+
+<button
+    class="favorite-btn"
+    data-id="${movie.imdbID}"
+>
+    Favorite
+</button>
+
+movieContainer.addEventListener(
+    "click",
+    (e) => {
+
+        if (
+            e.target.classList.contains(
+                "favorite-btn"
+            )
+        ) {
+
+            const movieId =
+                e.target.dataset.id;
+
+            favorites.push(movieId);
+
+            localStorage.setItem(
+                "favorites",
+                JSON.stringify(
+                    favorites
+                )
+            );
+
+        }
+
+    }
+);
