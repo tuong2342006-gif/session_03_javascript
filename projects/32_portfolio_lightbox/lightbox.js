@@ -93,3 +93,17 @@ lightbox.addEventListener(
     }
 );
 
+lightbox.style.display = "flex";
+
+setTimeout(() => {
+    lightbox.style.opacity = "1";
+}, 10);
+
+lightbox.style.opacity = "0";
+
+setTimeout(() => {
+
+    lightbox.style.display =
+        "none";
+
+}, 300);
