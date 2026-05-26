@@ -41,3 +41,25 @@ desc.textContent =
 desc.innerHTML =
 "<b>Hello</b>";
 
+//classList
+//HTML
+<h1 id="title">
+    Hello DOM
+</h1>
+//CSS
+// .active{
+//     color:red;
+// }
+
+//add
+title.classList.add("active");
+//remove
+title.classList.remove("active");
+//contains
+console.log(
+    title.classList.contains("active")
+);
+//toggle
+title.classList.toggle("active");
+
+
