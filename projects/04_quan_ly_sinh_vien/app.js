@@ -109,3 +109,23 @@ sortBtn.addEventListener(
         renderStudents(sortedStudents);
     }
 );
+
+const statistics =
+    document.getElementById("statistics");
+
+function renderStatistics() {
+
+    const averageScore =
+        students.reduce(
+            (sum, student) =>
+                sum + student.score,
+            0
+        ) / students.length;
+
+    statistics.innerHTML = `
+        <h3>Total Students: ${students.length}</h3>
+        <h3>Average Score: ${averageScore.toFixed(2)}</h3>
+    `;
+}
+
+renderStatistics();
