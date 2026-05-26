@@ -34,3 +34,36 @@ document.addEventListener("click", (e) => {
     }
 
 });
+
+const nextBtn =
+    document.getElementById("nextBtn");
+
+const prevBtn =
+    document.getElementById("prevBtn");
+
+function updateImage() {
+
+    lightboxImage.src =
+        images[currentIndex].src;
+}
+
+function updateImage() {
+
+    lightboxImage.src =
+        images[currentIndex].src;
+}
+
+prevBtn.addEventListener("click", () => {
+
+    currentIndex--;
+
+    if (currentIndex < 0) {
+
+        currentIndex =
+            images.length - 1;
+    }
+
+    updateImage();
+
+});
+
