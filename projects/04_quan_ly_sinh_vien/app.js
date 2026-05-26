@@ -73,3 +73,23 @@ function renderStudents(data) {
 }
 
 renderStudents(students);
+const searchInput =
+    document.getElementById("searchInput");
+
+searchInput.addEventListener(
+    "input",
+    () => {
+
+        const keyword =
+            searchInput.value.toLowerCase();
+
+        const filteredStudents =
+            students.filter(student =>
+                student.name
+                    .toLowerCase()
+                    .includes(keyword)
+            );
+
+        renderStudents(filteredStudents);
+    }
+);
